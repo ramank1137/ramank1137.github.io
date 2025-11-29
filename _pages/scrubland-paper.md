@@ -12,6 +12,10 @@ permalink: /scrubland-paper/
 Raman Kumar, Aatif Dar, Aaditeshwar Seth  
 *Department of Computer Science, IIT Delhi*
 
+We generated pan-India LULC v4 layers from 2017-2018 to 2023-2024 which can be checked on our application. [Link to application](https://raman-461708.projects.earthengine.app/view/pan-india-lulc-indiasat-v4). Our open source code is available on this link. [Link to code](https://github.com/ramank1137/Scrubland-Field-Delineation)
+><div style="background:white; padding:10px; display:block; text-align:center;"> <img src="/assets/img/Google-app.png" alt="Pipeline" style="max-width:100%; height:auto;"> </div>
+>Figure shows our application which can be accessed from the above link.
+
 # Introduction
 Scrublands are ecologically and socially important landscapes in India, supporting biodiversity, groundwater recharge, and pastoral livelihoods. Yet they are often misclassified as wastelands, causing them to be overlooked in restoration and land-management programs. A major challenge is that scrublands and rain-fed agricultural fields exhibit **very similar spectral and seasonal patterns**, making them difficult to distinguish in existing global LULC datasets.
 
@@ -169,7 +173,5 @@ The AEZ-level outputs are merged with the IndiaSAT v3 framework:
 
 # Conclusion
 
-This methodology enables accurate mapping of scrublands, farms, and plantations across India by combining high-resolution CV-derived boundaries with AEZ-specific modeling. It produces India’s first nationwide plantation layer and significantly improves distinction between scrublands and rain-fed agriculture. We generated pan-India layers from 2017-2018 to 2023-2024 which can be checked on our application. [Link to application](https://raman-461708.projects.earthengine.app/view/pan-india-lulc-indiasat-v4).
-><div style="background:white; padding:10px; display:block; text-align:center;"> <img src="/assets/img/Google-app.png" alt="Pipeline" style="max-width:100%; height:auto;"> </div>
->Figure shows our application which can be accessed from the above link.
+This methodology enables accurate mapping of scrublands, farms, and plantations across India by combining high-resolution CV-derived boundaries with AEZ-specific modeling. It produces India’s first nationwide plantation layer and significantly improves distinction between scrublands and rain-fed agriculture.
 

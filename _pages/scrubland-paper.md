@@ -133,19 +133,19 @@ To refine the boundaries and filter out high-confidence segments for farms, non-
 
 ## Farm rules
 
-- Entropy < 1.0  
-- Rectangularity > 0.67  
-- Size ∈ [500, 2000] m²  
-- Must belong to a cluster of ≥ 3 farms
+- >Entropy < 1.0  
+- >Rectangularity > 0.67  
+- >Size ∈ [500, 2000] m²  
+- >Must belong to a cluster of ≥ 3 farms
 
 ## Scrubland / non-agro rules
 
-- Size ∈ [60,000, 5,000,000] m²  
+- >Size ∈ [60,000, 5,000,000] m²  
 - >50% non-agricultural pixels (via IndiaSAT v3)
 
 ## Plantation rules
 
-- Size ∈ [1,000, 20,000] m²
+- >Size ∈ [1,000, 20,000] m²
 
 ## Overlap hierarchy
 
@@ -169,5 +169,7 @@ The AEZ-level outputs are merged with the IndiaSAT v3 framework:
 
 # Conclusion
 
-This methodology enables accurate mapping of scrublands, farms, and plantations across India by combining high-resolution CV-derived boundaries with AEZ-specific modeling. It produces India’s first nationwide plantation layer and significantly improves distinction between scrublands and rain-fed agriculture.
+This methodology enables accurate mapping of scrublands, farms, and plantations across India by combining high-resolution CV-derived boundaries with AEZ-specific modeling. It produces India’s first nationwide plantation layer and significantly improves distinction between scrublands and rain-fed agriculture. We generated pan-India layers from 2017-2018 to 2023-2024 which can be checked on our application. [Link to application](https://raman-461708.projects.earthengine.app/view/pan-india-lulc-indiasat-v4).
+><div style="background:white; padding:10px; display:block; text-align:center;"> <img src="/assets/img/Google-app.png" alt="Pipeline" style="max-width:100%; height:auto;"> </div>
+>Figure shows our application which can be accessed from the above link.
 

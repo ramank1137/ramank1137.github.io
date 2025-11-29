@@ -89,7 +89,7 @@ Two CV pipelines operate on these tiles:
 
 ## 2.1 Farm & Non-Agricultural Boundaries
 
-A **FracTAL-ResUNet** model generates:
+We use the approach by wang et al. who uses **FracTAL-ResUNet** model to generate:
 
 - field extent  
 - boundary probability  
@@ -97,9 +97,10 @@ A **FracTAL-ResUNet** model generates:
 
 These outputs are merged and processed by **hierarchical watershed segmentation** to obtain closed polygons.
 
-For each segment:
+For delineation of farm and scrubland boundaries, I extended the approach of Wang et al. (2022), which uses high-resolution imagery for field extraction but does not separate fields from adjacent scrublands. We generalized this method to mixed landscapes by leveraging the insight that unlike naturally shaped scrublands, agricultural fields exhibit lower geometric and textural randomness which can be captured via entropy, rectangularity, and segment-size
+metrics. Now to seperate out the boundaries of farms and non-agro regions which will include scrublands we compute the following for each segement which will be used in the following module to seperate out farms and non-agro from the boundaries generated:
 
-### Entropy
+#### Entropy
 
 $$
 H = - \sum_{i=1}^{L} p_i \log_2(p_i)
@@ -113,22 +114,22 @@ $$
 \sum_{x \in S^+} H(x)
 $$
 
-### Rectangularity
+#### Rectangularity
 
 $$
 R = \frac{A_{\text{contour}}}{A_{\text{rect}}}
 $$
 
-### Size  
+#### Size  
 Computed as pixel-area of the segment.
 
 ## 2.2 Plantation Boundaries
 
-Plantations are detected using a **fine-tuned YOLO model**, retaining only high-confidence detections.
+For plantations, we fine-tuned a YOLO detection model to identify plantations across heterogeneous landscapes at the same spatial resolution. To train this model, we curated sparse ground truth from multiple regions and expanded it using augmentation techniques like cut-mix.
 
 # 3. Rule-Based Boundary Refinement
 
-High-confidence segments are identified using the thresholds defined in the paper.
+To refine the boundaries and filter out high-confidence segments for farms, non-agro(including scrubs) and plantation we identified follwing rules.
 
 ## Farm rules
 
@@ -154,12 +155,7 @@ $$
 
 # 4. Sample Generation and Classifier Training
 
-- ~150 samples per class are extracted per 16×16 block  
-- For each sample, **Google’s 64-dimensional embeddings** for the **past 3 years** are collected  
-
-A **Random Forest classifier is trained for each AEZ**, allowing regional adaptation and avoiding over-generalization.
-
-The resulting models produce farm, non-agro, and plantation predictions at **10 m spatial resolution**.
+Once we have the high-quality segements, we then generated samples from each of these grids uniformly. For each sample, **Google’s 64-dimensional embeddings** for the **past 3 years** are collected. Using these samples we trained **a pool of classifiers for each AEZ**, allowing regional adaptation and avoiding over-generalization. The resulting models produce farm, non-agro, and plantation predictions at **10 m spatial resolution**.
 
 # 5. Integration into IndiaSAT
 

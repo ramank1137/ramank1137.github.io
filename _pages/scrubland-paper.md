@@ -27,7 +27,7 @@ To address this, our paper develops a generalized **computer-vision-based method
 
 The workflow contains **five sequential components**, summarized below.
 
-><div style="background:white; padding:10px; display:inline-block;"> <img src="/assets/img/Pipeline.png" alt="Pipeline"> </div> 
+><div style="background:white; padding:10px; display:block; text-align:center;"> <img src="/assets/img/Pipeline.png" alt="Pipeline" style="max-width:100%; height:auto;"> </div>
 > The figure shows the overview of five module pipeline. (1) Spatial Representativeness and Tile Selection: Select representative AEZ grids using Jensen–Shannon divergence. (2) High-Resolution Boundary Delineation: Extract farm, scrubland, and plantation boundaries using CV models on 1 m imagery. (3) Rule-Based Boundary Refinement: Apply entropy, rectangularity, and size thresholds to retain high-confidence segments. (4) Sample Generation and Classifier Training: Generate samples and train AEZ-specific Random Forest classifiers using 64-dim embeddings. (5) Integration into IndiaSAT: Combine AEZ predictions with IndiaSAT modules to produce final farm, scrubland, and plantation classes.
 
 # 1. Spatial Representativeness and Tile Selection
@@ -77,6 +77,8 @@ D_{JS} \Bigl( P_{\text{AEZ}} \parallel P_{S \cup \{ g_i \}} \Bigr)
 $$
 
 Approximately **3% of grids per AEZ** are selected and subdivided into 16×16 sub-grids.
+
+><div style="background:white; padding:10px; display:block; text-align:center;"> <img src="/assets/img/Representative-tile.png" alt="Pipeline" style="max-width:100%; height:auto;"> </div>
 
 # 2. High-Resolution Boundary Delineation
 

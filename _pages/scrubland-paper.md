@@ -79,6 +79,7 @@ $$
 Approximately **3% of grids per AEZ** are selected and subdivided into 16×16 sub-grids.
 
 ><div style="background:white; padding:10px; display:block; text-align:center;"> <img src="/assets/img/Representative-tile.png" alt="Pipeline" style="max-width:100%; height:auto;"> </div>
+>Figure showing representative tile selection across India. a) India divided into agro-ecological zones (AEZs) b) Next for each AEZ representative tiles are selected. Here we show for AEZ 7. Below the grids, clusters are shown whic hare generated from Google embeddings v1 using k-means clustering (k=32). Then the tiles are selected in orange using Jensen-Shannon (JS) divergence. c) Similary representative tiles are selected from all of India which will capture all the nuances of different landscapes across all the AEZs. 
 
 # 2. High-Resolution Boundary Delineation
 

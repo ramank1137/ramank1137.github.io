@@ -12,7 +12,7 @@ permalink: /scrubland-paper/
 Raman Kumar, Aatif Dar, Aaditeshwar Seth  
 *Department of Computer Science, IIT Delhi*
 
-We generated pan-India LULC v4 layers from 2017-2018 to 2023-2024 which can be checked on our application. [Link to application](https://raman-461708.projects.earthengine.app/view/pan-india-lulc-indiasat-v4). Our open source code is available on this link. [Link to code](https://github.com/ramank1137/Scrubland-Field-Delineation)
+We generated pan-India LULC v4 layers from 2017-2018 to 2023-2024 which can be checked on our application. [Link to application](https://raman-461708.projects.earthengine.app/view/pan-india-lulc-indiasat-v4). Our open source code is available on this link. [Link to code](https://github.com/ramank1137/Scrubland-Field-Delineation) To report an issue with our LULC. [Link to report issue](https://github.com/ramank1137/Scrubland-Field-Delineation/issues/new?template=lulc_refinement_request.yml)
 ><div style="background:white; padding:10px; display:block; text-align:center;"> <img src="/assets/img/Google-app.png" alt="Pipeline" style="max-width:100%; height:auto;"> </div>
 >Figure shows our application which can be accessed from the above link.
 

@@ -130,7 +130,7 @@ $$
 #### Size  
 Computed as pixel-area of the segment.
 
-><div style="background:white; padding:10px; display:block; text-align:center;"> <img src="/assets/img/Segments.png" alt="Pipeline" style="max-width:100%; height:auto;"> </div>
+><div style="background:white; padding:10px; display:block; text-align:center;"> <img src="/assets/img/Segments.png" alt="Pipeline" style="width:60%; height:auto;"> </div>
 > The figure shows segments coresponding to farm, scrubland and plantations. A) A farm will generally exhibit very less entropy due to its smooth textural appearance on the rgb image which can be captured using entropy. Farms are generally rectangular in shape which is captured by rectangularity. In india most farms are small and hence area can be used to filter them out. B) A scrubland will high entropy due to its rugged textural appearance which is due to its natural formation. This can be captured with high entropy. Fractal-ResUnet usually segments them as irregular boundaries as seen in the figure which will give lower values for rectangularity. C) Plantations may appear as of rectangular shape but will exhibit higher entropy due to its gridded plantation pattern. So they will be eliminated here but will be capture by our Yolo model.
 > The figure illustrates segments corresponding to farms, scrublands, and plantations: A) Farms. Farms typically exhibit low entropy because of their smooth textural appearance in RGB imagery. Their rectangular geometry is well captured by rectangularity, and in India, most farms are relatively small in area, so can be filtered well through size. B) Scrublands. Scrublands display high entropy due to their naturally rugged and heterogeneous texture. FracTAL-ResUNet often delineates them with irregular boundaries, resulting in low rectangularity scores. Size plays an important role for them as generally the patches are of very large size. C) Plantations. Plantations may appear rectangular in shape, but their gridded planting patterns yield higher entropy values. As a result, they are filtered out in this stage; however, they are later captured by our YOLO model, which detects plantation-specific structural cues. 
 
@@ -161,7 +161,7 @@ To refine the boundaries and filter out high-confidence segments for farms, non-
 
 - >Size ∈ [1,000, 20,000] m²
 
-><div style="background:white; padding:10px; display:block; text-align:center;"> <img src="/assets/img/Seperating Boundaries.png" alt="Pipeline" style="max-width:100%; height:auto;"> </div>
+><div style="background:white; padding:10px; display:block; text-align:center;"> <img src="/assets/img/Seperating Boundaries.png" alt="Pipeline" style="width:50%; height:auto;"> </div>
 > The figure depicts the selection of high-confidence boundaries for farms, scrublands, and plantations from the full set of detected boundaries. These selected boundaries serve as the basis for sample extraction. Since only a small number of samples are required from each tile, we retain just a few high-confidence boundaries per tile. The remaining large number of segments falls within the grey region.
 
 ## Overlap hierarchy
